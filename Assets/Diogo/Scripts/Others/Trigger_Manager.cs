@@ -15,7 +15,15 @@ public class Trigger_Manager : MonoBehaviour
     [SerializeField]
     float speed;
     [SerializeField]
-    Vector3 rotationDirection = new Vector3();
+    Vector3 rotation = new Vector3();
+
+    [SerializeField]
+    bool canStop;
+
+    private void Start()
+    {
+        canStop = false;
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -35,19 +43,22 @@ public class Trigger_Manager : MonoBehaviour
         {
             if (cenario)
             {
-                stopTunnel(tunel);
+                //stopTunnel(tunel);
             }
         }
     }
 
     private void rotateTunnel(GameObject tunel)
     {
-        tunel.transform.Rotate(rotationDirection * speed * Time.deltaTime);
-    }
-
-    private void stopTunnel(GameObject tunel)
-    {
-        tunel.transform.Rotate(0, 0, 0);
+        if(tunel.transform.localEulerAngles.x < -1 || tunel.transform.localEulerAngles.x > 0.1)
+        {
+            tunel.transform.Rotate(rotation * speed * Time.deltaTime);
+        }
+        else
+        {
+            tunel.transform.Rotate(0, 0, 0);
+        }
+        
     }
 
 }
