@@ -8,22 +8,11 @@ public class RotateObject : MonoBehaviour
     public Vector3 rotation;
     public float speed;
 
-    [Header("Floating")]
-    public float speedFloat;
-    public float height;
-    Vector3 initPos;
+    
 
-    private void Start()
+      void Update()
     {
-        initPos = transform.position;
-    }
+        transform.Rotate(rotation * speed * Time.deltaTime);
 
-    void Update()
-    {
-        transform.Rotate(rotation * speedFloat * Time.deltaTime);
-
-
-        float newY = Mathf.Sin(Time.time * speedFloat) * height * initPos.y;
-        transform.position = new Vector3(transform.position.x, newY, transform.position.z);
     }
 }
