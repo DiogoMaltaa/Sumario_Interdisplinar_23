@@ -7,6 +7,7 @@ public class Trigger_Manager : MonoBehaviour
     [Header("Trigger Type")]
     public bool cenario;
     public bool evento;
+    public bool door;
 
     [Header("Interactable Object")]
     public GameObject tunel;
@@ -23,6 +24,14 @@ public class Trigger_Manager : MonoBehaviour
     private void Start()
     {
         canStop = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+           
+        }
     }
 
     private void OnTriggerStay(Collider other)
