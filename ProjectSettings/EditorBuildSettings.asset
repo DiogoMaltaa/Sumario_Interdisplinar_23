@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Diogo/Scenes/MainMenu.unity
+    guid: 3aa1a49916effc14c878a60b69673ad4
+  - enabled: 1
+    path: Assets/Diogo/Scenes/D_Level.unity
+    guid: 94f8bc3d8b1471947bb0025891e6996b
+  - enabled: 0
     path: Assets/Diogo/Scenes/D_TestScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects: {}

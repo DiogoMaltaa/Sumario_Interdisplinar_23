@@ -9,4 +9,9 @@ public class SceneManagement : MonoBehaviour
     {
         SceneManager.LoadScene(scene);
     }
+
+    public void ExtiGame()
+    {
+        Application.Quit();
+    }
 }
